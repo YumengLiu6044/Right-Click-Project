@@ -19,7 +19,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Zap className="h-4 w-4 text-accent" />
+              <Zap className="h-4 w-4" />
               <span className="hidden sm:inline">Quick Estimates</span>
             </div>
           </div>
