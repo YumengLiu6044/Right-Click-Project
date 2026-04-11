@@ -77,7 +77,7 @@
     "name": "James & Tonya Mitchell",
     "address": "5602 Brickstone Ct, Springfield, IL 62712",
     "phone": "(217) 555-0633",
-    "property_type": "residential",
+    "propertyType": "residential",
     "sqft": 2750,
     "systemType": "Central AC + Gas Furnace",
     "systemAge": 15,

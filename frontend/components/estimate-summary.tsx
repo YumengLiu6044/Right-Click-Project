@@ -10,7 +10,6 @@ import {
   WorkOrderEquipment,
   WorkOrderLabor,
   formatCurrency,
-  generateWorkOrderId,
 } from "@/lib/data"
 
 interface EstimateSummaryProps {

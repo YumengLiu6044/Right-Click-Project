@@ -95,7 +95,7 @@ export function EquipmentSelector({ selectedEquipment, onUpdateEquipment }: Equi
             />
           </div>
           <Select value={categoryFilter} onValueChange={setCategoryFilter}>
-            <SelectTrigger className="w-full sm:w-[180px]">
+            <SelectTrigger className="w-full sm:w-45">
               <SelectValue placeholder="Category" />
             </SelectTrigger>
             <SelectContent>
@@ -108,7 +108,7 @@ export function EquipmentSelector({ selectedEquipment, onUpdateEquipment }: Equi
         </div>
 
         {/* Equipment Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[300px] overflow-y-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-75 overflow-y-auto">
           {filteredEquipment.map((item) => {
             const inCart = selectedEquipment.find(e => e.equipment.id === item.id)
             return (

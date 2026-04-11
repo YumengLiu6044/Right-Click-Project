@@ -84,11 +84,11 @@ export function LaborSelector({ selectedLabor, onUpdateLabor }: LaborSelectorPro
                 <Badge className={jobTypeColors[jobType]}>{jobType}</Badge>
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {items.map((item) => {
+                {items.map((item, idx) => {
                   const inOrder = selectedLabor.find(l => l.labor.id === item.id)
                   return (
                     <div
-                      key={item.id}
+                      key={idx}
                       className={`p-3 rounded-lg border transition-colors cursor-pointer ${
                         inOrder ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"
                       }`}
