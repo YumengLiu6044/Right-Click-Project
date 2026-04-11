@@ -1,16 +1,9 @@
-"use client";
-
 import { useState } from "react";
 import { CustomerSelector } from "./customer-selector";
 import { EquipmentSelector } from "./equipment-selector";
 import { LaborSelector } from "./labor-selector";
 import { EstimateSummary } from "./estimate-summary";
-import {
-	type Customer,
-	type WorkOrderEquipment,
-	type WorkOrderLabor,
-	generateWorkOrderId,
-} from "@/lib/data";
+import { type FormProps, generateWorkOrderId } from "@/lib/data";
 import { toast } from "sonner";
 import {
 	Dialog,
@@ -20,15 +13,22 @@ import {
 	DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, FileText } from "lucide-react";
+import { CheckCircle2, ExternalLink, FileText } from "lucide-react";
+import { useNavigate } from "react-router";
 
-export function WorkOrderForm() {
-	const [customer, setCustomer] = useState<Customer | null>(null);
-	const [equipment, setEquipment] = useState<WorkOrderEquipment[]>([]);
-	const [labor, setLabor] = useState<WorkOrderLabor[]>([]);
-	const [notes, setNotes] = useState("");
+export function WorkOrderForm({
+	customer,
+	setCustomer,
+	equipment,
+	setEquipment,
+	labor,
+	setLabor,
+	notes,
+	setNotes,
+	workOrderId,
+	setWorkOrderId,
+}: FormProps) {
 	const [showSuccess, setShowSuccess] = useState(false);
-	const [workOrderId, setWorkOrderId] = useState("");
 
 	const handleSubmit = () => {
 		const id = generateWorkOrderId();
@@ -47,6 +47,8 @@ export function WorkOrderForm() {
 		setShowSuccess(false);
 		setWorkOrderId("");
 	};
+
+	const navigate = useNavigate();
 
 	return (
 		<>
@@ -106,12 +108,15 @@ export function WorkOrderForm() {
 							<Button
 								variant="outline"
 								className="flex-1"
-								onClick={() => setShowSuccess(false)}
+								size="lg"
+								onClick={() => navigate("/bill")}
 							>
-								View Details
+								<ExternalLink className="h-4 w-4 mr-2" />
+								View Full Bill
 							</Button>
 							<Button
 								className="flex-1"
+								size="lg"
 								onClick={handleNewWorkOrder}
 							>
 								New Work Order

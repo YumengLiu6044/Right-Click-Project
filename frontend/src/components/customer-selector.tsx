@@ -91,7 +91,7 @@ export function CustomerSelector({
 												onSelectCustomer(customer);
 												setOpen(false);
 											}}
-											className="flex flex-col items-start py-3"
+											className="flex items-start py-3"
 										>
 											<div className="flex items-center w-full">
 												<Check

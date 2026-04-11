@@ -50,6 +50,19 @@ export interface WorkOrder {
 	createdAt: Date;
 }
 
+export interface FormProps {
+	customer: Customer | null;
+	setCustomer: (value: Customer | null) => void;
+	equipment: WorkOrderEquipment[];
+	setEquipment: (value: WorkOrderEquipment[]) => void;
+	labor: WorkOrderLabor[];
+	setLabor: (value: WorkOrderLabor[]) => void;
+	notes: string;
+	setNotes: (value: string) => void;
+	workOrderId: string;
+	setWorkOrderId: (value: string) => void;
+}
+
 export const customers: Customer[] = importedCustomers.map(
 	(item) => item as Customer,
 );
