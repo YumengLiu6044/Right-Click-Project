@@ -12,18 +12,6 @@ A simple repair estimate might take 10-15 minutes. A full system replacement quo
 
 We've got about 40 technicians in the field. If each one does 4-6 estimates a day, that's a lot of wasted time — and a lot of customers standing around waiting. We've heard from customers that the wait makes the whole experience feel less professional, and we've definitely lost jobs because a competitor got a clean estimate out faster.
 
-## What We Have
+## Solution
 
-In the `data/` folder, you'll find some of the information our techs work with:
-
-- **equipment.json** — Our catalog of HVAC equipment and parts with pricing
-- **labor_rates.json** — What we charge for different types of work
-- **customers.json** — A sample of customer and property records
-
-This is real-ish data pulled from our systems. It's not perfect — some of it was exported from different tools at different times, so it might not all look the same.
-
-## What We're Asking
-
-Build something that helps.
-
-Fork this repo, build your solution, and include a short write-up explaining your approach — what you built, why you made the choices you did, and what you'd do differently with more time.
+I used V0 to quickly prototype a website that let's technicians lookup customers, equipments, and labor rates. 
