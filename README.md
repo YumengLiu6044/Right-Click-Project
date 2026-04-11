@@ -14,4 +14,8 @@ We've got about 40 technicians in the field. If each one does 4-6 estimates a da
 
 ## Solution
 
-I used V0 to quickly prototype a website that let's technicians lookup customers, equipments, and labor rates. 
+I used V0 to quickly prototype a website that let's technicians lookup customers, equipments, and labor rates. Technicians can quickly make and print an itemized bill. This is a frontend-only project due to time constraints. 
+
+## Future work 
+- Build a backend to persist data and to support more customers and equipments data
+- Add another page in the frontend to allow viewing and searching past bills

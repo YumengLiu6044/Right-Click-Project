@@ -5,7 +5,6 @@ import {
 	Phone,
 	MapPin,
 	Calendar,
-	Clock,
 	Wrench,
 	Package,
 } from "lucide-react";
