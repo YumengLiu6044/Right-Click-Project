@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
 	Check,
 	ChevronsUpDown,
@@ -40,6 +40,22 @@ export function CustomerSelector({
 }: CustomerSelectorProps) {
 	const [open, setOpen] = useState(false);
 
+	const popoverTriggerRef = useRef<HTMLButtonElement>(null);
+	const [popoverContentWidth, setPopoverContentWidth] = useState(0);
+	
+	// Update popover content width when the trigger button is rendered or resized
+	useEffect(() => {
+		function updateWidth() {
+			if (popoverTriggerRef.current) {
+				setPopoverContentWidth(popoverTriggerRef.current.offsetWidth);
+			}
+		}
+
+		updateWidth();
+		window.addEventListener("resize", updateWidth);
+		return () => window.removeEventListener("resize", updateWidth);
+	}, []);
+
 	return (
 		<Card>
 			<CardHeader className="pb-3">
@@ -50,7 +66,7 @@ export function CustomerSelector({
 			</CardHeader>
 			<CardContent>
 				<Popover open={open} onOpenChange={setOpen}>
-					<PopoverTrigger className="w-full">
+					<PopoverTrigger className={"w-full"} ref={popoverTriggerRef}>
 						<Button
 							variant="outline"
 							role="combobox"
@@ -62,9 +78,6 @@ export function CustomerSelector({
 									<span className="font-medium">
 										{selectedCustomer.name}
 									</span>
-									<span className="text-sm text-muted-foreground">
-										{selectedCustomer.address}
-									</span>
 								</div>
 							) : (
 								<span className="text-muted-foreground">
@@ -75,7 +88,10 @@ export function CustomerSelector({
 						</Button>
 					</PopoverTrigger>
 					<PopoverContent
-						className="w-(--radix-popover-trigger-width) p-0"
+						className="p-0"
+						style={{
+							width: popoverContentWidth
+						}}
 						align="start"
 					>
 						<Command>
