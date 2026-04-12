@@ -66,7 +66,7 @@ export function CustomerSelector({
 			</CardHeader>
 			<CardContent>
 				<Popover open={open} onOpenChange={setOpen}>
-					<PopoverTrigger className={"w-full"} ref={popoverTriggerRef}>
+					<PopoverTrigger asChild ref={popoverTriggerRef}>
 						<Button
 							variant="outline"
 							role="combobox"
