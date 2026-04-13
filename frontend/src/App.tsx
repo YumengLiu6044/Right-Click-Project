@@ -3,6 +3,7 @@ import Home from "./pages/home";
 import { useState } from "react";
 import type { Customer, WorkOrderEquipment, WorkOrderLabor } from "./lib/data";
 import Bill from "./pages/bill";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
 	const [customer, setCustomer] = useState<Customer | null>(null);
@@ -13,6 +14,7 @@ function App() {
 
 	return (
 		<BrowserRouter>
+			<Analytics></Analytics>
 			<Routes>
 				<Route
 					index
